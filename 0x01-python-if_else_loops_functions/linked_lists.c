@@ -88,6 +88,8 @@ void free_listint(listint_t *head)
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new_node;
+	listint_t *cur = *head;
+	listint_t *prev = cur;
 
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
@@ -98,14 +100,24 @@ listint_t *insert_node(listint_t **head, int number)
 	if (*head == NULL)
 	{
 		*head = new_node;
-		new_nod->next = NULL;
+		new_node->next = NULL;
 	}
 	else
 	{
-		while (head->next != NULL)
+		while (prev != NULL)
 		{
-			if (head->)
+			if (cur == NULL || number < cur->n)
+			{
+				new_node->next = cur;
+				if(prev != NULL)
+				{
+					prev->next = new_node;
+					break;
+				}
+			}
+			prev = cur;
+			cur = cur->next;
 		}
-
 	}
+	return (new_node);
 }
