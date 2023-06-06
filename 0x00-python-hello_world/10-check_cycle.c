@@ -10,17 +10,13 @@
 
 int node_is_exist(listint_t **nodes_list, listint_t *node)
 {
-	int cnt = 0;
-
 	if (node == NULL)
 		return (0);
-	if (!nodes_list)
-		return (0);
-	while (nodes_list[cnt])
+	while (*nodes_list)
 	{
-		if (nodes_list[cnt] == node)
+		if (*nodes_list == node)
 			return (1);
-		cnt++;
+		nodes_list++;
 	}
 	return (0);
 }
@@ -48,6 +44,16 @@ int check_cycle(listint_t *list)
 
 	while (list != NULL)
 	{
+		checked_nodes[i] = list;
+		list = list->next;
+
+		if (node_is_exist(checked_nodes, list))
+		{
+			free(checked_nodes);
+			return (1);
+		}
+
+		i++;
 		if (i >= arr_size)
 		{
 			arr_size += 10;
@@ -59,16 +65,6 @@ int check_cycle(listint_t *list)
 				return (1);
 			}
 		}
-
-		checked_nodes[i] = list;
-		list = list->next;
-
-		if (node_is_exist(checked_nodes, list))
-		{
-			free(checked_nodes);
-			return (1);
-		}
-		i++;
 	}
 	free(checked_nodes);
 	return (0);
