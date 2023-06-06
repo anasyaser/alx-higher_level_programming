@@ -31,19 +31,18 @@ int node_is_exist(listint_t **nodes_list, listint_t *node)
 int check_cycle(listint_t *list)
 {
 
-	listint_t **checked_nodes;
+	listint_t **checked_nodes = NULL;
 	unsigned int i = 0;
-	unsigned int arr_size = 10;
-
-	checked_nodes = malloc(arr_size * sizeof(listint_t *));
-	if (checked_nodes == NULL)
-	{
-		printf("Error");
-		return (1);
-	}
 
 	while (list != NULL)
 	{
+		checked_nodes =	realloc(checked_nodes, sizeof(listint_t *) * (i + 1));
+		if (checked_nodes == NULL)
+		{
+			printf("Error");
+			return (1);
+		}
+
 		checked_nodes[i] = list;
 		list = list->next;
 
@@ -52,19 +51,7 @@ int check_cycle(listint_t *list)
 			free(checked_nodes);
 			return (1);
 		}
-
 		i++;
-		if (i >= arr_size)
-		{
-			arr_size += 10;
-			checked_nodes =	realloc(checked_nodes,
-					arr_size * sizeof(listint_t *));
-			if (checked_nodes == NULL)
-			{
-				printf("Error");
-				return (1);
-			}
-		}
 	}
 	free(checked_nodes);
 	return (0);
