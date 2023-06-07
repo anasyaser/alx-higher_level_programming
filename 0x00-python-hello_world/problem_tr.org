@@ -19,5 +19,3 @@
 |  12 | compile           | Done      |   0 | Advanced       |
 |  13 | magic calculation | Done      |   0 | Advanced       |
 |-----+-------------------+-----------+-----+----------------|
-
-
