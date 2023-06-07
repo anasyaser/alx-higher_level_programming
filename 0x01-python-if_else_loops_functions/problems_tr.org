@@ -1,0 +1,27 @@
+
+
+* 0x01-python_if_else_loops_functions
+
+|-----+----------------------+--------+-----+---------------|
+| NO. | name                 | Status | rev | note          |
+|-----+----------------------+--------+-----+---------------|
+|   0 | positive or negative | Done   |   0 |               |
+|   1 | last digit           | Done   |   0 |               |
+|   2 | print alphabet       | Done   |   0 |               |
+|   3 | pirnt alphabt        | Done   |   0 |               |
+|   4 | print hexa           | Done   |   0 |               |
+|   5 | print comb2          | Done   |   0 |               |
+|   6 | print comb3          | Done   |   0 |               |
+|   7 | islower              | Done   |   0 |               |
+|   8 | uppercase            | Done   |   0 |               |
+|   9 | print last digit     | Done   |   0 |               |
+|  10 | add                  | Done   |   0 |               |
+|  11 | pow                  | Done   |   0 |               |
+|  12 | fizzbuzz             | Done   |   0 |               |
+|  13 | insert number        | Done   |   0 | Techincal pep |
+|  14 | print tebahpla       | Done   |   0 | Advanced      |
+|  15 | remove char at       | Done   |   0 | Advanced      |
+|  16 | magic calculation    | Done   |   0 | Advanced      |
+|-----+----------------------+--------+-----+---------------|
+
+
