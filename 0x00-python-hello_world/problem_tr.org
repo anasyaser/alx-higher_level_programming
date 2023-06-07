@@ -1,0 +1,23 @@
+
+* 0x00-hello, world
+
+|-----+-------------------+-----------+-----+----------------|
+| NO. | name              | Status    | rev | note           |
+|-----+-------------------+-----------+-----+----------------|
+|   0 | run               | Done      |   0 |                |
+|   1 | run_inline        | Done      |   0 |                |
+|   2 | print             | Done      |   0 |                |
+|   3 | print number      | Done      |   0 |                |
+|   4 | print float       | Done      |   0 |                |
+|   5 | print string      | Done      |   0 |                |
+|   6 | concat            | Done      |   0 |                |
+|   7 | edges             | Done      |   0 |                |
+|   8 | concat edges      | Done      |   0 |                |
+|   9 | easter egg        | Done      |   0 |                |
+|  10 | check cycle       | semi-Done |   0 | Technical prep |
+|  11 | write             | Done      |   0 | Advanced       |
+|  12 | compile           | Done      |   0 | Advanced       |
+|  13 | magic calculation | Done      |   0 | Advanced       |
+|-----+-------------------+-----------+-----+----------------|
+
+
