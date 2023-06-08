@@ -2,6 +2,7 @@
 import sys
 from calculator_1 import add, sub, mul, div
 
+
 def check_arguments(args):
     if (len(args) - 1) != 3:
         print("Usage: {} <a> <operator> <b>".format(args[0]))
@@ -9,6 +10,7 @@ def check_arguments(args):
     elif args[2] not in "+-*/":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
+
 
 def operation(args):
     a = int(args[1])
@@ -26,6 +28,7 @@ def operation(args):
         result = div(a, b)
 
     print("{} {} {} = {}".format(a, operator, b, result))
+
 
 if __name__ == "__main__":
     args = sys.argv
