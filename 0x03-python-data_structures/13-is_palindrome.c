@@ -2,13 +2,14 @@
 
 /**
  * linked_list_length - get length of linked list
+ *
  * @head: pointer to head of linked list
- * Return: (int) length of linked list\
+ * Return: (int) length of linked list
  */
 
 int linked_list_length(listint_t *head)
 {
-	unsigned int cnt = 0;
+	int cnt = 0;
 
 	while (head)
 	{
@@ -16,6 +17,7 @@ int linked_list_length(listint_t *head)
 		cnt++;
 	}
 	return (cnt);
+
 }
 
 /**
@@ -29,7 +31,9 @@ int linked_list_length(listint_t *head)
 listint_t *get_nth_node(listint_t *head, int nth)
 {
 	while (nth--)
+	{
 		head = head->next;
+	}
 
 	return (head);
 }
