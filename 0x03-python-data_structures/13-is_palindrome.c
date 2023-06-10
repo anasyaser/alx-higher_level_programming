@@ -50,26 +50,38 @@ int is_palindrome(listint_t **head)
 {
 	int length = linked_list_length(*head);
 	int middle = length / 2;
-	listint_t *begin = *head;
-	listint_t *head_mid_node;
-	listint_t *last;
+	listint_t *current = *head;
+	int i = 0;
+	int *node_values;
+	int z = 0;
 
 	if (length == 1 || length == 0)
 		return (1);
 
-	head_mid_node = get_nth_node(*head, middle);
-	if (length % 2 != 0)
+	node_values = malloc(sizeof(int) * middle);
+	if (node_values == NULL)
 	{
-		head_mid_node = head_mid_node->next;
-		length--;
+		printf("hello\n");
+		return (0);
 	}
-	while (length > middle)
+
+
+	while (current)
 	{
-		last = get_nth_node(head_mid_node, length - middle - 1);
-		if (begin->n != last->n)
+		if (middle)
+		{
+			node_values[middle - 1] = current->n;
+			middle--;
+		} else if (node_values[i] != current->n)
+		{
+			free(node_values);
 			return (0);
-		begin = begin->next;
-		length--;
+		} else
+		{
+			i++;
+		}
+		current = current->next;
 	}
+	free(node_values);
 	return (1);
 }
