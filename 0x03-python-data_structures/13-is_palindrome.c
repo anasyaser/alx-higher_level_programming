@@ -41,7 +41,7 @@ listint_t *get_nth_node(listint_t *head, int nth)
 /**
  * reverse_list - create doubly linked list
  *
- * @head: pointer to head of linked list\
+ * @head: pointer to head of linked list
  * Return: pointer to tail of linked list
  */
 
