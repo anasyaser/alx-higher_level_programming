@@ -38,6 +38,31 @@ listint_t *get_nth_node(listint_t *head, int nth)
 	return (head);
 }
 
+/**
+ * reverse_list - create doubly linked list
+ *
+ * @head: pointer to head of linked list\
+ * Return: pointer to tail of linked list
+ */
+
+listint_t *reverse_list(listint_t **head)
+{
+	listint_t *current = *head;
+	listint_t *previous = NULL;
+
+	if (!current)
+		return (NULL);
+	while (current)
+	{
+		current->prev = previous;
+		previous = current;
+		current = current->next;
+
+	}
+	return (previous);
+
+}
+
 
 /**
  * is_palindrome - check if linked list is palindrome
@@ -50,37 +75,19 @@ int is_palindrome(listint_t **head)
 {
 	int length = linked_list_length(*head);
 	int middle = length / 2;
-	listint_t *current = *head;
-	int i = 0;
-	int *node_values;
+	listint_t *begin = *head;
+	listint_t *last = reverse_list(head);
 
 	if (length == 1 || length == 0)
 		return (1);
-
-	node_values = malloc(sizeof(int) * middle);
-	if (node_values == NULL)
+	while (middle)
 	{
-		printf("hello\n");
-		return (0);
-	}
-
-
-	while (current)
-	{
-		if (middle)
-		{
-			node_values[middle - 1] = current->n;
-			middle--;
-		} else if (node_values[i] != current->n)
-		{
-			free(node_values);
+		if (begin->n != last->n)
 			return (0);
-		} else
-		{
-			i++;
-		}
-		current = current->next;
+		begin = begin->next;
+		last = last->prev;
+		middle--;
+
 	}
-	free(node_values);
 	return (1);
 }
