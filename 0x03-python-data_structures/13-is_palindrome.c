@@ -53,7 +53,6 @@ int is_palindrome(listint_t **head)
 	listint_t *current = *head;
 	int i = 0;
 	int *node_values;
-	int z = 0;
 
 	if (length == 1 || length == 0)
 		return (1);
