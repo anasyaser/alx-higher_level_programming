@@ -41,13 +41,15 @@ listint_t *get_nth_node(listint_t *head, int nth)
 /**
  * reverse_linded_list - reverse list
  *
- * @head: pointer to head of linked list
+ * @curr: pointer to head to start reverse
+ * @n: number of linkes to reverse
  * Return: pointer to head of reveresed linked list
  */
 
-listint_t *reverse_linked_list(listint_t *prev, listint_t *curr)
+listint_t *reverse_list(listint_t *curr)
 {
-	lintint_t *tmp;
+	listint_t *prev = NULL;
+	listint_t *tmp;
 
 	while (curr)
 	{
@@ -57,7 +59,6 @@ listint_t *reverse_linked_list(listint_t *prev, listint_t *curr)
 		curr = tmp;
 	}
 	return (prev);
-
 }
 
 
@@ -73,23 +74,29 @@ int is_palindrome(listint_t **head)
 	int length = linked_list_length(*head);
 	int middle = length / 2;
 	listint_t *cmp_first = *head;
-	lintint_t *cmp_second;
-	int i;
+	listint_t *last_node;
+	listint_t *cmp_second;
+
 	if (length == 1 || length == 0)
 		return (1);
 	if (length == 2)
 		return (cmp_first->n == cmp_first->next->n);
 
-	cmp_second = get_nth_node(middle);
-	cmp_second = reverse_linked_list(cmp_second, cmp_second->next);
+	cmp_second = get_nth_node(cmp_first, middle);
+	cmp_second = reverse_list(cmp_second);
+	last_node = cmp_second;
 	while (middle)
 	{
 		if (cmp_first->n != cmp_second->n)
+		{
+			reverse_list(last_node);
 			return (0);
+		}
 		cmp_first = cmp_first->next;
-		cmp_second = cmp_second->prev;
+		cmp_second = cmp_second->next;
 		middle--;
 
 	}
+	reverse_list(last_node);
 	return (1);
 }

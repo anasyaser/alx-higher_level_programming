@@ -1,23 +1,12 @@
-import <listobject.h>
-import <object.h>
-import <stdio.h>
-import <stdlib.h>
+#include <listobject.h>
+#include <object.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <python.h>
 
 
 void print_python_list_info(PyObject *p)
 {
-	Py_ssize_t len = PyList_size(p);
-
-
-
-
-
-	printf("[*] size of the Python List = %d\n", len);
-	printf("[*] Allocated = %d\n", );
-
-	while (len)
-	{
-		
-	}
+	printf("[*] size of the Python List = %d\n", sizeof(p));
 
 }

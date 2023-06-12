@@ -23,7 +23,7 @@ void free_listint(listint_t *head);
 
 int linked_list_lenght(listint_t *head);
 listint_t *get_nth_node(listint_t *head, int nth);
-listint_t *reverse_linked_list(listint_t *curr, listint_t *prev);
+listint_t *reverse_list(listint_t *curr);
 int is_palindrome(listint_t **head);
 
 #endif /* LISTS_H */
