@@ -39,10 +39,9 @@ listint_t *get_nth_node(listint_t *head, int nth)
 }
 
 /**
- * reverse_linded_list - reverse list
+ * reverse_list - reverse list
  *
  * @curr: pointer to head to start reverse
- * @n: number of linkes to reverse
  * Return: pointer to head of reveresed linked list
  */
 
@@ -81,7 +80,7 @@ int is_palindrome(listint_t **head)
 		return (1);
 	if (length == 2)
 		return (cmp_first->n == cmp_first->next->n);
-
+/* not that we can remove above condtitions and still works well*/
 	cmp_second = get_nth_node(cmp_first, middle);
 	cmp_second = reverse_list(cmp_second);
 	last_node = cmp_second;
