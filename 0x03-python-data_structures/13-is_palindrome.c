@@ -39,27 +39,24 @@ listint_t *get_nth_node(listint_t *head, int nth)
 }
 
 /**
- * reverse_list - create doubly linked list
+ * reverse_linded_list - reverse list
  *
- * @head: pointer to head of linked list\
- * Return: pointer to tail of linked list
+ * @head: pointer to head of linked list
+ * Return: pointer to head of reveresed linked list
  */
 
-listint_t *reverse_list(listint_t **head)
+listint_t *reverse_linked_list(listint_t *prev, listint_t *curr)
 {
-	listint_t *current = *head;
-	listint_t *previous = NULL;
+	lintint_t *tmp;
 
-	if (!current)
-		return (NULL);
-	while (current)
+	while (curr)
 	{
-		current->prev = previous;
-		previous = current;
-		current = current->next;
-
+		tmp = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = tmp;
 	}
-	return (previous);
+	return (prev);
 
 }
 
@@ -75,17 +72,22 @@ int is_palindrome(listint_t **head)
 {
 	int length = linked_list_length(*head);
 	int middle = length / 2;
-	listint_t *begin = *head;
-	listint_t *last = reverse_list(head);
-
+	listint_t *cmp_first = *head;
+	lintint_t *cmp_second;
+	int i;
 	if (length == 1 || length == 0)
 		return (1);
+	if (length == 2)
+		return (cmp_first->n == cmp_first->next->n);
+
+	cmp_second = get_nth_node(middle);
+	cmp_second = reverse_linked_list(cmp_second, cmp_second->next);
 	while (middle)
 	{
-		if (begin->n != last->n)
+		if (cmp_first->n != cmp_second->n)
 			return (0);
-		begin = begin->next;
-		last = last->prev;
+		cmp_first = cmp_first->next;
+		cmp_second = cmp_second->prev;
 		middle--;
 
 	}

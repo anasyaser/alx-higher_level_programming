@@ -15,7 +15,6 @@ typedef struct listint_s
 {
 	int n;
 	struct listint_s *next;
-	struct listint_s *prev;
 } listint_t;
 
 size_t print_listint(const listint_t *h);
@@ -24,7 +23,7 @@ void free_listint(listint_t *head);
 
 int linked_list_lenght(listint_t *head);
 listint_t *get_nth_node(listint_t *head, int nth);
-listint_t *reverse_list(listint_t **head);
+listint_t *reverse_linked_list(listint_t *curr, listint_t *prev);
 int is_palindrome(listint_t **head);
 
 #endif /* LISTS_H */
