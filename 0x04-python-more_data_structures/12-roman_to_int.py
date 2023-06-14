@@ -7,9 +7,7 @@ def roman_to_int(roman_string):
     result = [0]
     for sym in roman_string:
         cur = roman_int_dict.get(sym)
-        if not cur:
-            result.append(0)
-        elif cur <= result[-1]:
+        if cur <= result[-1]:
             result.append(cur)
         else:
             result.append(cur - result.pop())
