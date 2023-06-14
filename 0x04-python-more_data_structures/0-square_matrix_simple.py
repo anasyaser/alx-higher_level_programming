@@ -1,2 +1,9 @@
 def square_matrix_simple(matrix=[]):
-    return [[num ** 2 for num in row] for row in matrix]
+    nmatrix = matrix.copy()
+    result = []
+    for lst in matrix:
+        cur_lst = []
+        for num in lst:
+            cur_lst.append(num ** 2)
+        result.append(cur_lst)
+    return result
