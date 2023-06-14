@@ -2,7 +2,7 @@
 from functools import reduce
 
 
-def roman_to_int_v2(roman_string):
+def roman_to_int(roman_string):
     if not roman_string:
         return 0
     roman_int_dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10,
