@@ -1,0 +1,25 @@
+
+
+* 0x03-python-data_structures
+
+|-----+-----------------------------+--------+-----+---------------|
+| NO. | name                        | Status | rev | note          |
+|-----+-----------------------------+--------+-----+---------------|
+|   0 | print list integers         | Done   |   0 |               |
+|   1 | element at                  | Done   |   0 |               |
+|   2 | replace in list             | Done   |   0 |               |
+|   3 | print reversed list integer | Done   |   0 |               |
+|   4 | new in list                 | Done   |   0 |               |
+|   5 | no c                        | Done   |   0 |               |
+|   6 | print matrix integer        | Done   |   0 |               |
+|   7 | add tuple                   | Done   |     |               |
+|   8 | multiple returns            | Done   |   0 |               |
+|   9 | max integer                 | Done   |   0 |               |
+|  10 | divisible by 2              | Done   |   0 |               |
+|  11 | delete at                   | Done   |   0 |               |
+|  12 | switch                      | Done   |   0 |               |
+|  13 | is palindrome               | Done   |   0 | Techincal pep |
+|  14 | print python list           |        |   0 | Advanced      |
+|-----+-----------------------------+--------+-----+---------------|
+
+

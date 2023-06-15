@@ -1,0 +1,27 @@
+
+
+* 0x04-python-more_data_structures
+
+|-----+-------------------------+--------+-----+----------------|
+| NO. | name                    | Status | rev | note           |
+|-----+-------------------------+--------+-----+----------------|
+|   0 | square matrix simple    | Done   |   0 |                |
+|   1 | search replaces         | Done   |   0 |                |
+|   2 | uniq add                | Done   |   0 |                |
+|   3 | common elements         | Done   |   0 |                |
+|   4 | only diff elements      | Done   |   0 |                |
+|   5 | number keys             | Done   |   0 |                |
+|   6 | print sorted dictionary | Done   |   0 |                |
+|   7 | update dictionary       | Done   |   0 |                |
+|   8 | simple delete           | Done   |   0 |                |
+|   9 | multiply by 2           | Done   |   0 |                |
+|  10 | best score              | Done   |   0 |                |
+|  11 | multiply list map       | Done   |   0 |                |
+|  12 | roman to integer        | Done   |   0 | Technical prep |
+|  13 | weight average          | Done   |   0 | Advanced       |
+|  14 | square matrix map       | Done   |   0 | Advanced       |
+|  15 | complex delete          | Done   |   0 | Advanced       |
+|  16 | python.c                |        |     | Advanced       |
+|-----+-------------------------+--------+-----+----------------|
+
+
