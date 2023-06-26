@@ -9,7 +9,7 @@ def list_division(lst1, lst2, lst_lenght):
         except IndexError:
             print("out of range")
             break
-        except (ValueError, TypeError):
+        except TypeError:
             print("wrong type")
         finally:
             pass
