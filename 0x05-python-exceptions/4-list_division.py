@@ -8,7 +8,6 @@ def list_division(lst1, lst2, lst_lenght):
             print("division by 0")
         except IndexError:
             print("out of range")
-            break
         except TypeError:
             print("wrong type")
         finally:
