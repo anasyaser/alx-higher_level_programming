@@ -40,3 +40,13 @@ class Square:
         """
 
         return self.size * self.size
+
+    def my_print(self):
+        """
+        Reperesent sqaure area as (#) char
+        """
+        if self.size == 0:
+            print()
+        else:
+            for i in range(self.size):
+                print("#" * self.size)
