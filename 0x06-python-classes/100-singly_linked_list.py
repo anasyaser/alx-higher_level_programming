@@ -72,6 +72,7 @@ class SinglyLinkedList:
            next_node: (Node) next node
            new_node: (Node) new added node
         """
+
         if prev_node is not None:
             prev_node.next_node = new_node
         else:
@@ -103,6 +104,9 @@ class SinglyLinkedList:
             prev.next_node = new_node
 
     def __str__(self):
+        """
+        String representation of linked list nodes
+        """
         nodes = []
         current = self.__head
         while(current):
