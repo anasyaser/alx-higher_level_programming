@@ -68,10 +68,12 @@ class Square:
         """
         Reperesent sqaure area as (#) char
         """
+        string = ""
         if self.size == 0:
-            print()
+            string += "\n"
         else:
-            print("\n" * self.position[1], end="")
+            string += "\n" * self.position[1]
             for i in range(self.size):
-                print(" " * self.position[0], end="")
-                print("#" * self.size)
+                string += " " * self.position[0]
+                string += "#" * self.size + "\n"
+        return string[:-1]
