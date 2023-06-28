@@ -20,7 +20,7 @@ class Node:
         """Getter attribute: data"""
         return self.__data
 
-    @property.setter
+    @data.setter
     def data(self, value):
         """
         Setter attribute: data
@@ -36,9 +36,9 @@ class Node:
     @property
     def next_node(self):
         """Getter attribute: next_node"""
-        return self.__node
+        return self.__next_node
 
-    @property.setter
+    @next_node.setter
     def next_node(self, value):
         """
         Setter attribute: next_node
@@ -46,10 +46,11 @@ class Node:
         Args:
             value: next node value
         """
-        if isinstance(value, Node):
-            self.__next = value
+        if (value is None) or isinstance(value, Node):
+            self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
+
 
 class SinglyLinkedList:
     """
@@ -59,27 +60,23 @@ class SinglyLinkedList:
         head: head of linked list
     """
 
-    def __init__():
+    def __init__(self):
         self.__head = None
 
-    def insert_end(self, data):
+    def insert_between(self, prev_node, next_node, new_node):
         """
-        Insert node to the end of linked list
+        insert node between another two's
 
         Args:
-            data: data of added node
+           prev_node: (Node) previous node
+           next_node: (Node) next node
+           new_node: (Node) new added node
         """
-
-        new_node = Node(data)
-
-        if not self.__head:
-            self.__head = new_node
+        if prev_node is not None:
+            prev_node.next_node = new_node
         else:
-            current = self.__head
-            while(current.next_node):
-                current = current.next_node
-
-            current.next_node = new_node
+            self.__head = new_node
+        new_node.next_node = next_node
 
     def sorted_insert(self, data):
         """
@@ -91,7 +88,24 @@ class SinglyLinkedList:
 
         new_node = Node(data)
 
-        if not self.__head:
+        if self.__head is None:
             self.__head = new_node
         else:
+            prev = None
             current = self.__head
+
+            while(current):
+                if new_node.data < current.data:
+                    self.insert_between(prev, current, new_node)
+                    return
+                prev = current
+                current = current.next_node
+            prev.next_node = new_node
+
+    def __str__(self):
+        nodes = []
+        current = self.__head
+        while(current):
+            nodes.append(str(current.data))
+            current = current.next_node
+        return "\n".join(nodes)
