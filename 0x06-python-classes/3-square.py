@@ -12,4 +12,14 @@ class Square:
     def __init__(self, size):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        self.__size = size
+        self.size = size
+
+    def area(self):
+        """
+        Calculate square area
+
+        Return:
+            (int) square area
+        """
+
+        return self.size * self.size
