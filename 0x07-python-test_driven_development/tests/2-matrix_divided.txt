@@ -1,0 +1,64 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> lst1 = [[1, 2, 3], [4, 5, 6], [7, 8]]
+>>> matrix_divided(lst1, 1)
+Traceback (most recent call last)
+...
+TypeError: Each row of the matrix must have the same size
+
+>>> lst1[2] = [7, 8, 9]
+>>> matrix_divided(lst1, 1)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]]
+
+>>> lst1[1][1] = "C is fun"
+>>> matrix_divided(lst1, 1)
+Traceback (most recent call last)
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> lst2 = [[1, 2, 3], [4, 5, 6]]
+
+>>> matrix_divided(lst2, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> matrix_divided(lst2, 0)
+Traceback (most recent call last)
+...
+ZeroDivisionError: division by zero
+
+>>> matrix_divided(lst2, "s")
+Traceback (most recent call last)
+...
+TypeError: div must be a number
+
+>>> matrix_divided(lst2, -1)
+[[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0]]
+
+>>> lst3 = []
+>>> matrix_divided(lst3, 1)
+Traceback (most recent call last)
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> lst3 = [[]]
+>>> matrix_divided(lst3, 1)
+[[]]
+
+>>> lst4 = [[-1, 2, -3], [4, -5, 6]]
+>>> matrix_divided(lst4, 3)
+[[-0.33, 0.67, -1.0], [1.33, -1.67, 2.0]]
+>>> return_matrix = matrix_divided(lst4, 3)
+>>> lst4 is return_matrix
+False
+
+>>> lst5 = [[1, 2], [3, 4], 5]
+
+>>> matrix_divided(lst5, 3)
+Traceback (most recent call last)
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> lst5 = [1, 2]
+>>> matrix_divided(lst5, 3)
+Traceback (most recent call last)
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
