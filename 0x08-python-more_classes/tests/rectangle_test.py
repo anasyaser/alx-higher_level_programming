@@ -5,6 +5,7 @@ Tests for rectangle module
 import unittest
 Rectangle = __import__("0-rectangle").Rectangle
 
+
 class RectangleTest(unittest.TestCase):
 
     def setUp(self):
