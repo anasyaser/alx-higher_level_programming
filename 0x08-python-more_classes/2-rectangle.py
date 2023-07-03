@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+n"""
 Create Rectangle wiht some features
 """
 
@@ -90,3 +90,17 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """Calculate rectangle area"""
+        return self.width * self.height
+
+    def perimeter(self):
+        """
+        Calculate rectangle perimeter
+        (Alert: if any dimension is zero return 0)
+        """
+        if area == 0:
+            return 0
+        else:
+            return (self.width + self.height) * 2
