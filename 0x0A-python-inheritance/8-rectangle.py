@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 Rectangle Module
+
+Create Geometry shape ()Rectangle)
 """
 
 
