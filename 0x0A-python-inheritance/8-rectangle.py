@@ -16,27 +16,22 @@ class Rectangle(BaseGeometry):
     """
     def __init__(self, width, height):
         super().__init__()
-        self.width = width
-        self.height = height
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
 
-    @property
-    def width(self):
-        """Get rectangle width"""
-        return self.__width
+r = Rectangle(3, 5)
 
-    @width.setter
-    def width(self, value):
-        """Set recatgle width"""
-        self.integer_validator("width", value)
-        self.__width = value
+print(r)
+print(dir(r))
 
-    @property
-    def height(self):
-        """Get rectangle height"""
-        return self.__height
+try:
+    print("Rectangle: {} - {}".format(r.width, r.height))
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
 
-    @height.setter
-    def height(self, value):
-        """Set recatangel Height"""
-        self.integer_validator("width", value)
-        self.__height = value
+try:
+    r2 = Rectangle(4, True)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
