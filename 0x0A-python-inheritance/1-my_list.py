@@ -11,4 +11,3 @@ class MyList(list):
     def print_sorted(self):
         """print sorted list without modify original list"""
         print(sorted(self))
-
