@@ -4,14 +4,14 @@ Rectangle Module
 
 Create Geometry shape ()Rectangle)
 """
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """
     Create recatangle
 
     attributes:
-        widht: rectangle width
+        width: rectangle width
         height: rectangle height
     """
     def __init__(self, width, height):
