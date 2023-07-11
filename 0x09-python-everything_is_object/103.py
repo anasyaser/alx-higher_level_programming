@@ -1,5 +1,3 @@
-import sys
-
-print(sys.gettotalrefcount())
-a = 3
-print(sys.gettotalrefcount())
+a = 1024
+b = 1024
+print(a is b)

@@ -1,0 +1,23 @@
+OI>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("rec", "ana")
+Traceback (most recent call last):
+...
+TypeError: rec must be an integer
+>>> bg.integer_validator("rec", 0)
+Traceback (most recent call last):
+...
+ValueError: rec must be greater than 0
+>>> bg.integer_validator("rec", -5)
+Traceback (most recent call last):
+...
+ValueError: rec must be greater than 0
+>>> bg.integer_validator("rec", 2)
+>>> bg.integer_validator("rec", True)
+Traceback (most recent call last):
+...
+TypeError: rec must be an integer
+>>> bg.integer_validator("rec", 1.2)
+Traceback (most recent call last):
+...
+TypeError: rec must be an integer
