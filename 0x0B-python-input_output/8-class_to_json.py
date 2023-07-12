@@ -7,4 +7,4 @@ import json
 
 def class_to_json(obj):
     """Convert calss attributes to python dictionary"""
-    return json.dumps(vars(obj))
+    return vars(obj)
