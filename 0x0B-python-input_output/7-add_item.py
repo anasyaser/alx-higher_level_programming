@@ -8,6 +8,7 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 
 def add_item(file_name, args):
+    """Add all script arguments to list and save them as json file object"""
     try:
         file_lst = load_from_json_file(file_name)
         file_lst += args
@@ -15,5 +16,6 @@ def add_item(file_name, args):
     except e:
         save_to_json_file(args, file_name)
 
+if __name__ == "__main__":
 
-add_item("add_item.json", sys.argv[1:])
+    add_item("add_item.json", sys.argv[1:])
