@@ -22,7 +22,7 @@ class Student:
         """Retrieve dictionary of class attributes to convert to json"""
         all_attrs = vars(self)
         dict_attrs = {}
-        if attrs:
+        if attrs is not None:
             for attr in attrs:
                 if attr in all_attrs:
                     dict_attrs[attr] = all_attrs[attr]
