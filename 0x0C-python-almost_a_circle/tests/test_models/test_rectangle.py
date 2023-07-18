@@ -83,15 +83,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(self.rec1), msg)
 
         self.rec1.update(x=8, y=3, id=110)
-        msg = "[Rectangle] (110) 2/2 - 8/9"
+        msg = "[Rectangle] (110) 8/3 - 8/9"
         self.assertEqual(str(self.rec1), msg)
 
         self.rec1.update(width=10)
-        msg = "[Rectangle] (100) 8/3 - 8/9"
+        msg = "[Rectangle] (100) 8/3 - 10/9"
         self.assertEqual(str(self.rec1), msg)
 
         self.rec1.update(id=105)
-        msg = "[Rectangle] (105) 2/2 - 8/9"
+        msg = "[Rectangle] (105) 8/3 - 10/9"
         self.assertEqual(str(self.rec1), msg)
 
         with self.assertRaises(TypeError):
