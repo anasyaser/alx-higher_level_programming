@@ -18,6 +18,7 @@ class Rectangle(Base):
         y: y coordinate
         id: shape instance id
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -70,7 +71,6 @@ class Rectangle(Base):
         else:
             self.__x = value
 
-
     @property
     def y(self):
         """y offset getter"""
@@ -92,14 +92,40 @@ class Rectangle(Base):
 
     def display(self):
         """reprsent rectangle as # symbole"""
-        pass
+        print("\n" * self.y, end="")
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update rectangle attributes"""
-        attrs = [self.id, self.width, self.height, self]
-        for arg in enumerate(args):
-            pass
+        if args:
+            try:
+                super().__init__(args[0])
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+        else:
+            for key in kwargs.keys():
+                value = kwargs[key]
+                if key == "id":
+                    super().__init__(value)
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
+    def to_dictionary(self):
+        """get instanse attributes as dictionary"""
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
