@@ -1,3 +1,0 @@
--- count all records
-SELECT * FROM 'first_table'
-       COUNT id;
