@@ -1,11 +1,7 @@
 #!/usr/bin/node
-const Square2 = require('./5-Square');
+const Square2 = require('./5-square');
 
 class Square extends Square2 {
-  constructor (l) {
-    super(l, l);
-  }
-
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
