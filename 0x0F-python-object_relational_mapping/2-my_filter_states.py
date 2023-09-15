@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Connect python to MySQLdb module and fetch all states start with N"""
+"""
+Connect python to MySQLdb module and fetch all states which match Given name
+"""
 import MySQLdb
 import sys
 
@@ -9,7 +11,7 @@ if __name__ == "__main__":
                            passwd=args[1], db=args[2])
     cur = conn.cursor()
     cur.execute("SELECT * FROM states\
-    WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    WHERE name = {}".format(args[3])
 
     query_rows = cur.fetchall()
 
