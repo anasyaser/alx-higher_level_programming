@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Connect python to MySQLdb module and fetch all states which match Given name
+Connect python to MySQLdb module and fetch all states match given name
 """
 import MySQLdb
 import sys
@@ -11,7 +11,7 @@ if __name__ == "__main__":
                            passwd=args[1], db=args[2])
     cur = conn.cursor()
     cur.execute("SELECT * FROM states\
-    WHERE name = {}".format(args[3])
+    WHERE name = {}".format(args[3]))
 
     query_rows = cur.fetchall()
 
