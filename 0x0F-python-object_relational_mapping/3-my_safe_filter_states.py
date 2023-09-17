@@ -12,7 +12,7 @@ if __name__ == "__main__":
                            passwd=args[1], db=args[2])
     cur = conn.cursor()
 
-    cur.execute( "SELECT * FROM states WHERE binary name = %s", [args[3]])
+    cur.execute("SELECT * FROM states WHERE binary name = %s", [args[3]])
 
     query_rows = cur.fetchall()
 
