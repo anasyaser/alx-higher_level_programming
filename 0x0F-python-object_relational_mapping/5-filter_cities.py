@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     for row in query_rows[:-1]:
         if (row == query_rows[-1]):
-            print(row, end='')
+            print(row[1], end='')
         else:
             print(row[1], end=", ")
     print()
