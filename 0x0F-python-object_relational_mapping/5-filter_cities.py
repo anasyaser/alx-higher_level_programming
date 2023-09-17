@@ -11,16 +11,15 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", port=3306, user=args[0],
                            passwd=args[1], db=args[2])
     cur = conn.cursor()
-    query = "SELECT cities.name FROM states\
-    INNER JOIN cities\
-    ON states.id = cities.state_id\
-    WHERE binary states.name = %s\
-    ORDER BY cities.name"
-    cur.execute(query, [args[3]])
+
+    cur.execute("SELECT cities.id, cities.name FROM states INNER JOIN cities\
+    ON states.id = cities.state_id WHERE states.name = %s ORDER BY cities.id",
+                [args[3]])
 
     query_rows = cur.fetchall()
 
-    for row in query_rows:
-        print(row)
+    for row in query_rows[:-1]:
+        print(row[1], end=", ")
+    print(query_rows[-1][1])
     cur.close()
     conn.close()
