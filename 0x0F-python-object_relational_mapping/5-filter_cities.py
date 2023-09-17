@@ -19,7 +19,10 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
 
     for row in query_rows[:-1]:
-        print(row[1], end=", ")
-    print(query_rows[-1][1])
+        if (row == query_rows[-1]):
+            print(row, end='')
+        else:
+            print(row[1], end=", ")
+    print()
     cur.close()
     conn.close()
