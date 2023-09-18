@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-Script that prints the all the State objects from the states table
-from database
+Script that prints the first State object from the database
 """
 
-import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from sys import argv
 
 if __name__ == __main__:
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
