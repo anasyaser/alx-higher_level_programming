@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-fetch all states table recordes and print them
+Script that prints the all the State objects from the states table
+from database
 """
 
 import sys

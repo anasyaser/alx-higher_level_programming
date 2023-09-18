@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Fetch first record from states table and print it
+Script that prints the first State object from the database
 """
 
 import sys
