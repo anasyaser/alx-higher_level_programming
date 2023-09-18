@@ -20,7 +20,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     is_match = session.query(State).filter(State.name == argv[4]).first()
     if is_match:
-        print(is_match.id)
+        print("{}".format(is_match.id))
     else:
         print("Not found")
     session.close()
