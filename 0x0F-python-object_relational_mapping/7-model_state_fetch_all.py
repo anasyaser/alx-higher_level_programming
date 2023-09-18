@@ -8,20 +8,17 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
-
-if __name__ == "__main__":
-
+if __name__ == __main__:
     # create an engine
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
-    # create a configured "Session" class
+    # Create a configured session class
     Session = sessionmaker(bind=engine)
-    # create a Session
+    # create a session
     session = Session()
     Base.metadata.create_all(engine)
 
-    s_tate = session.query(State).order_by(State.id).all()
-    for state in s_tate:
+    for state in session.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
     session.close()
