@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Fetch all recorder that conatain letter 'a'
+Script that prints the first State object from the database
 """
 
 import sys
@@ -18,8 +18,9 @@ if __name__ == "__main__":
     session = Session()
 
     Base.metadata.create_all(engine)
-    query = session.query(State).filter(State.name.ilike('%a$')).order_by(
-        State.id).all
-    for row in query:
-        print("{}: {}".format(row.id, row.name))
+    is_match = session.query(State).filter(State.name == argv[4])
+    if is_match:
+        print(is_match.id)
+    else:
+        print("Not found")
     session.close()
