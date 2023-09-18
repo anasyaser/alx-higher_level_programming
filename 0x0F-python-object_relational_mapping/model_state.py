@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Connect to datebase and create States table
+states table : id(primary key), name(states name)
 """
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base

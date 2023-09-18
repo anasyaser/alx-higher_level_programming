@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""fetch all states table recordes and print them"""
+"""
+fetch all states table recordes and print them
+and print them in specific format
+"""
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
