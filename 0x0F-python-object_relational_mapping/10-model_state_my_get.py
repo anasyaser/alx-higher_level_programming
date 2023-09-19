@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that prints the first State object from the database
+Script that search for given name
 """
 
 import sys
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     Base.metadata.create_all(engine)
-    is_match = session.query(State).filter(State.name == argv[4]).first()
+    is_match = session.query(State).filter(State.name == sys.argv[4]).first()
     if is_match:
         print("{}".format(is_match.id))
     else:
