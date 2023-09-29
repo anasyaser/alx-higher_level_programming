@@ -7,7 +7,8 @@ import requests
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         v = ""
-    v = sys.argv[1]
+    else:
+        v = sys.argv[1]
     r = requests.post('http://0.0.0.0:5000/search_user', data={'q': v})
     try:
         j = r.json()
